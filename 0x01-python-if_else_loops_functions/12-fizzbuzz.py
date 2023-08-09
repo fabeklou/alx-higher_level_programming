@@ -10,4 +10,3 @@ def fizzbuzz():
         else:
             result = value
         print("{} ".format(result), end="")
-    print()
