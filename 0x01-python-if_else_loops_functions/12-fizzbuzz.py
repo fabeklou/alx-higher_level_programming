@@ -9,4 +9,4 @@ def fizzbuzz():
             result = "Fizz"
         else:
             result = value
-        print("{}".format(result), end=(" " if value != 100 else "\n"))
+        print("{} ".format(result), end=("" if value != 100 else "\n"))
