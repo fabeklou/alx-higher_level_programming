@@ -1,7 +1,7 @@
 # 0x03. Python - Data Structures: Lists, Tuples
 
 <p align="center">
-    <img size="400" src="">
+    <img size="400" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Det-kkoSw9T4IZ4XrypVNQ.png">
 </p>
 
 ## Resources
