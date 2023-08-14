@@ -37,7 +37,6 @@ int is_palindrome(listint_t **head)
 
 	while (nxt != NULL && prev != NULL)
 	{
-		printf("%d \t %d\n", nxt->n, prev->n);
 		if (nxt->n != prev->n)
 			return (0);
 		nxt = nxt->next;
