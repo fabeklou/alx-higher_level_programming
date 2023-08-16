@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
         return result
     while i < len(roman_string):
         if i < len(roman_string) - 1:
-            if roman_dict.get(roman_string[i]) < roman_dict.get(roman_string[i + 1]):
+            if roman_dict[roman_string[i]] < roman_dict[roman_string[i + 1]]:
                 result += roman_dict.get(roman_string[i + 1], 0) - \
                     roman_dict.get(roman_string[i], 0)
                 i += 2
