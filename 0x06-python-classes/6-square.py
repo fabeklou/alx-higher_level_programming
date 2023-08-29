@@ -101,7 +101,7 @@ class Square:
         if self.size == 0:
             print()
         else:
-            if self.position[1] == 0:
-                print("{}".format((self.position[1] - 1) * '\n'))
+            for _ in range(self.position[1]):
+                print()
             for i in range(self.size):
-                print("{}{}".format(" " * self.position[0], '#' * self.size))
+                print("{}".format(" " * self.position[0] + '#' * self.size))
