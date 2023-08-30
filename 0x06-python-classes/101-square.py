@@ -23,8 +23,8 @@ class Square:
             ValueError: if size is less than zero (0)
 
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self) -> int:
@@ -109,7 +109,7 @@ class Square:
 
         """
         if self.size == 0:
-            return
+            return ""
         data_str: str = ""
         data_str += self.position[1] * '\n'
         for x in range(self.size):
