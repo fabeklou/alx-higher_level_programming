@@ -1,0 +1,32 @@
+Testing the  ``matrix_divided``  function from  ``2-matrix_divided``  module 
+============================================================================
+
+
+Importing the  ``matrix_divided``  function:
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+[x] -> section 01 - 
+
+[x] -> section 02 - 
+
+[x] -> section 03 - 
+
+[x] -> section 04 - 
+
+[x] -> section 05 - 
+
+[x] -> section 06 - 
+
+[x] -> section 07 - 
+
+[x] -> section 08 - 
+
+[x] -> section 09 - 
+
+[x] -> section 10 - 
+
+[x] -> section 11 - 
+
+[x] -> section 12 - 
+
+[x] -> section 03 - 

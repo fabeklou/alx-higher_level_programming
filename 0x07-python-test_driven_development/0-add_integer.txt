@@ -1,0 +1,297 @@
+Testing the  ``add_integer``  function from   ``0-add_intger``   module
+=======================================================================
+
+Importing the add_integer function :
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+
+__________________________________________________________________
+[x] -> Section 01 - Numeric values
+
+Adding two integer values:
+    >>> add_integer(7, 3)
+    10
+
+Adding an integer to a floating point number:
+    >>> add_integer(12, 7.0)
+    19
+    >>> add_integer(7.0, 12)
+    19
+
+Adding adding two floating point number:
+    >>> add_integer(5.1, 7.3)
+    12
+
+Adding a positive number to a negative number:
+    >>> add_integer(-1, 10)
+    9
+    >>> add_integer(7, -19)
+    -12
+
+Adding two negative numbers:
+    >>> add_integer(-7, -9)
+    -16
+
+
+__________________________________________________________________
+[x] -> Section 02 - Booleans
+
+Adding a boolean to an integer:
+    >>> add_integer(True, 12)
+    13
+    >>> add_integer(11, False)
+    11
+
+Passing a single boolean value:
+    >>> add_integer(True)
+    99
+    >>> add_integer(False)
+    98
+
+Adding a boolean to a floating point number:
+    >>> add_integer(True, 8.2)
+    9
+    >>> add_integer(7.3, False)
+    7
+
+
+__________________________________________________________________
+[x] -> Section 03 - strings
+
+Passing a single str value:
+    >>> add_integer("a str")
+
+Passing Two str values:
+    >>> add_integer("a str", "another str")
+
+Adding a numeric value to a string:
+    >>> add_integer(12, "a str")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer("a str", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+
+__________________________________________________________________
+[x] -> Section 04 - lists
+
+Passing a single empty list:
+    >>> add_integer([])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing a single none empty list:
+    >>> add_integer([1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding an integer to a list:
+    >>> add_integer([1, 2], 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(7.3, [1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be a integer
+
+Passing two arguments of type list:
+    >>> add_integer([], [1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer([2], [])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+
+__________________________________________________________________
+[x] -> Section 05 - dicts
+
+Passing a single empty dict:
+    >>> add_integer({})
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing a single none empty dict:
+    >>> add_integer({x: 1, y: 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding an integer to a dict:
+    >>> add_integer({x: 12, y: 1}, 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(7.3, {x: 1, y: 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing two arguments of type dict:
+    >>> add_integer({}, {x: 1, y: 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer({x: 1, y: 2}, {})
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+
+__________________________________________________________________
+[x] -> Section 06 - tuples
+
+Passing a single empty tuple:
+    >>> add_integer(())
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing a single none empty tuple:
+    >>> add_integer((1, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding an integer to a tuple:
+    >>> add_integer((1, 2), 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(7.3, (1, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing two arguments of type tuple:
+    >>> add_integer((), (1, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer((2), ())
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+
+__________________________________________________________________
+[x] -> Section 07 - sets
+
+Passing a single empty set:
+    >>> add_integer(set())
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Passing a single none empty set:
+    >>> add_integer({1, 2, 2, 3})
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding an integer to a set:
+    >>> add_integer({1, 1, 2, 3}, 12)
+    ?
+    >>> add_integer(7.3, {1, 2, 2, 3})
+    ?
+
+Passing two arguments of type set:
+    >>> add_integer(set(), {1, 2})
+    ?
+    >>> add_integer({1, 1, 2, 3}, set())
+    ?
+
+
+__________________________________________________________________
+[x] -> Section 08 - No Argument
+
+Calling add_integer without any argument:
+    >>> add_integer()
+    >>> add_integer(value)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
+__________________________________________________________________
+[x] -> Section 09 - Variable not set as Argument
+
+Calling add_integer with an undeclared varible:
+    >>> add_integer(value)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() takes at least 1 non-keyword argument (0 given)
+
+
+__________________________________________________________________
+[x] -> Section 10 - a single Argument
+
+Passing a single value (negative/positive integer/float):
+    >>> add_integer(2)
+    100
+    >>> add_integer(-8)
+    90
+    >>> add_integer(2.9)
+    100
+    >>> add_integer(-8.7)
+    90
+
+
+
+__________________________________________________________________
+[x] -> Section 11 - Too many arguments
+
+Adding more than two integer value:
+    >>> add_integer(1, 2, 3)
+    ?
+
+Adding more than two floating point value:
+    >>> add_integer(1.0, 2.1, 3.7)
+    ?
+
+Adding more than two non numeric values:
+    >>> add_integer("str", False, 12)
+    ?
+
+Adding more than two all kind of values:
+    >>> add_integer("str", False, 12)
+    ?
+
+
+__________________________________________________________________
+[x] -> Section 12 - None
+
+Passing None as argument:
+    >>> add_integer(None)
+    ?
+
+Adding None to a numeric value:
+    >>> add_integer(None, 12)
+    ?
+    >>> add_integer(2.7, None)
+
+
+__________________________________________________________________
+[x] -> Section 12 - None
+
+Passing a symbol as argument:
+    >>> add_integer(;)
+    >>> add_integer(#)
+    >>> add_integer(<)
