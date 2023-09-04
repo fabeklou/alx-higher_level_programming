@@ -8,6 +8,16 @@ class Rectangle:
 
     """
     def __init__(self, width=0, height=0):
+        """The __init__ method is automatically called when
+        the class is instantiate
+
+        Args:
+            width (int):
+                is the width of the rectangle and set to 0 by default
+            height (int):
+                is the height of the rectangle and set to 0 by default
+
+        """
         self.width = width
         self.height = height
 
