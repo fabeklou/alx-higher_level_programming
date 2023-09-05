@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def magic_string() -> str:
-    iter: int = globals()[list(globals())[-1]]
-    return (iter * "BestSchool, ")[:-2]
+    magic_string.iter: int = getattr(magic_string, "iter", 0) + 1
+    return (magic_string.iter * "BestSchool, ")[:-2]
