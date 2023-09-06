@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 """
-This module contains an addition function (add_integer)
-the function adds two integers together and retruns the result.
+This module defines an addition function (add_integer)
+that adds two integers together and retruns the result.
 
 Example:
 >>> add_integer(2)
@@ -15,8 +15,8 @@ Example:
 
 def add_integer(a: int, b: int = 98) -> int:
     """
-    This function add two numbers a and b together and
-    return the result
+    This function adds two numbers a and b together and
+    returns the result
 
     Args:
         a (int): is a mandatory argument of type integer or a float
@@ -28,7 +28,8 @@ def add_integer(a: int, b: int = 98) -> int:
         int: representing the result of `a` + `b`
 
     Raises:
-        TypeError: if one or both arguments are not integer or float
+        TypeError: if a is not an integer or a float
+        TypeError: if b is not an integer or a float
 
     """
     if not isinstance(a, int):

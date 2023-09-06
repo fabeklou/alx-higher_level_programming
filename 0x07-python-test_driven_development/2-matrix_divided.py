@@ -16,7 +16,7 @@ def matrix_divided(matrix: list, div: int = 1) -> list:
     """This function divides all the elements of a matrix
 
         Args:
-            matrix (:list: list): is a list of lists (2D list) of integers 
+            matrix (:list: list): is a list of lists (2D list) of integers
                 or floats
             div (int): is a non null (!= 0) integer or floating point number
                 to divide the matrix elements with
@@ -44,9 +44,10 @@ def matrix_divided(matrix: list, div: int = 1) -> list:
                 "matrix must be a matrix (list of lists) of integers/floats")
         for value in element:
             if not isinstance(value, int) and not isinstance(value, float):
-                raise TypeError(
-                    "matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix "
+                                "(list of lists) of integers/floats")
 
+    even_cols = 1
     even_cols = set([len(element) for element in matrix])
 
     if len(even_cols) != 1:
@@ -60,15 +61,6 @@ def matrix_divided(matrix: list, div: int = 1) -> list:
 
     # Using list comprehension to generate a new matrix, made of
     # individual element of the list divided by `div`
+    if div == 1:
+        return matrix
     return [[round(value/div, 2) for value in element] for element in matrix]
-
-
-if __name__ == "__main__":
-    matrix_divided = __import__('2-matrix_divided').matrix_divided
-
-    matrix = [
-        [1, 2, 3],
-        [4, 5, 6]
-    ]
-    print(matrix_divided(matrix, 3))
-    print(matrix)
