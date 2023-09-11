@@ -28,11 +28,10 @@ class BaseGeometry:
             ValueError: if `value` is less or equal to 0
 
         """
-        if not isinstance(value, int) or type(value) is bool:
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-        return value
 
 
 class Rectangle(BaseGeometry):
@@ -52,5 +51,7 @@ class Rectangle(BaseGeometry):
                 ValueError: if width/height is <= 0
 
         """
-        self.__width = super().integer_validator("width", width)
-        self.__height = super().integer_validator("height", height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
