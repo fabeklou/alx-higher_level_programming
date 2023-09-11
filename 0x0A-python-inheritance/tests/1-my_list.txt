@@ -1,0 +1,102 @@
+Testing the  ``MyList``  class  from  ``1-my_list``  module 
+============================================================================
+
+
+Importing the  ``MyList``  class:
+    >>> MyList = __import__("1-my_list").MyList
+
+
+
+
+__________________________________________________________________
+[x] -> section 01 - Create instance of MyList class
+    >>> ml = MyList()
+
+
+__________________________________________________________________
+[x] -> section 02 - appending data to MyList object
+    >>> ml.append(11)
+    >>> ml.append(12)
+    >>> ml.append(1)
+    >>> ml.append(15)
+    >>> ml.print_sorted()
+    [1, 11, 12, 15]
+    >>> print(ml)
+    [11, 12, 1, 15]
+
+
+__________________________________________________________________
+[x] -> section 03 - creating a new MyList object from a list object
+    >>> ml = MyList([1, 2, 7, 9, 3, 5])
+    >>> ml.print_sorted()
+    [1, 2, 3, 5, 7, 9]
+    >>> print([1, 2, 7, 9, 3, 5])
+    [1, 2, 7, 9, 3, 5]
+
+    >>> ml = MyList([1, 2, 3, 4, 5, 7])
+    >>> ml.print_sorted()
+    [1, 2, 3, 4, 5, 7]
+
+    >>> ml = MyList([7, 6, 5, 4, 3, 2, 1])
+    >>> ml.print_sorted()
+    [1, 2, 3, 4, 5, 6, 7]
+
+    >>> ml = MyList([1, 1, 7, 7, 3, 3])
+    >>> ml.print_sorted()
+    [1, 1, 3, 3, 7, 7]
+
+    >>> ml = MyList([1, 1, 7, 7, 3, -3])
+    >>> ml.print_sorted()
+    [-3, 1, 1, 3, 7, 7]
+
+    >>> ml = MyList([-1, -2, -7, -5, -9, -3])
+    >>> ml.print_sorted()
+    [-9, -7, -5, -3, -2, -1]
+
+
+__________________________________________________________________
+[x] -> section 04 - append, insert pop method on MyList object
+    >>> ml.append(11)
+    >>> ml.append(12)
+    >>> ml.append(1)
+    >>> ml.append(15)
+    >>> ml.print_sorted()
+    [-9, -7, -5, -3, -2, -1, 1, 11, 12, 15]
+
+    >>> ml.pop()
+    15
+    >>> ml.append(0)
+    >>> ml.append(7)
+    >>> ml.insert(2, 42)
+    >>> ml.print_sorted()
+    [-9, -7, -5, -3, -2, -1, 0, 1, 7, 11, 12, 42]
+    
+
+__________________________________________________________________
+[x] -> section 05 - Empty list
+    >>> ml = MyList()
+    >>> ml.print_sorted()
+    []
+    >>> print(ml)
+    []
+
+    >>> ml = MyList([])
+    >>> ml.print_sorted()
+    []
+    >>> print(ml)
+    []
+
+
+__________________________________________________________________
+[x] -> section 06 - MyList object with one memember
+    >>> ml = MyList([10])
+    >>> ml.print_sorted()
+    [10]
+    >>> print(ml)
+    [10]
+
+    >>> ml = MyList([-10])
+    >>> ml.print_sorted()
+    [-10]
+    >>> print(ml)
+    [-10]
