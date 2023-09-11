@@ -14,17 +14,11 @@ class MyInt(int):
         __eq__ magic method
 
         """
-        return self.real != other
+        return self.numerator != other
 
     def __ne__(self, other):
         """Changes the default behavior of the
         __ne__ magic method
 
         """
-        return self.real == other
-
-
-my_i = MyInt(3)
-print(my_i)
-print(my_i == 3)
-print(my_i != 3)
+        return self.numerator == other
