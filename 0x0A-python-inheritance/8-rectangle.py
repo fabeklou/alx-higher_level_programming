@@ -4,34 +4,7 @@
 Rectangle class which is a sub_class of the BaseGeometry class
 """
 
-
-class BaseGeometry:
-    """BaseGeometry class defines basic methods and
-    attributes to perform geometric tasks
-
-    """
-    def area(self):
-        """A method that raises an Exception"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name: str, value: int) -> int:
-        """A method that validates a value
-
-        Args:
-            name (str):
-                is the identifier of the varible (tag)
-            value (int):
-                is the data of type integer to validate
-
-        Raises:
-            TypeError: if `value` is not an integer
-            ValueError: if `value` is less or equal to 0
-
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -51,7 +24,7 @@ class Rectangle(BaseGeometry):
                 ValueError: if width/height is <= 0
 
         """
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
