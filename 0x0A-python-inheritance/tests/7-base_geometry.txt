@@ -1,0 +1,117 @@
+Testing the  ``BaseGeometry``  class  from  ``7-base_geometry``  module 
+============================================================================
+
+
+Importing the  ``BaseGeometry``  class:
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+
+
+__________________________________________________________________
+[01] -> Create instance of BaseGeometry class
+    >>> bg = BaseGeometry()
+
+
+__________________________________________________________________
+[02] -> Calling integer_validator() without second argument
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+__________________________________________________________________
+[03] -> Calling integer_validator() with second arg not integer
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+    
+    >>> bg.integer_validator("len", 7.8)
+    Traceback (most recent call last):
+        ...
+    TypeError: len must be an integer
+    
+    >>> bg.integer_validator("fork", [])
+    Traceback (most recent call last):
+        ...
+    TypeError: fork must be an integer
+    
+    >>> bg.integer_validator("yes", True)
+    
+    
+    >>> bg.integer_validator("name", "str")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+    
+
+
+__________________________________________________________________
+[04] -> Calling integer_validator() with second arg <= 0
+    >>> bg.integer_validator("name", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: name must be greater than 0
+
+    >>> bg.integer_validator("chief", -7)
+    Traceback (most recent call last):
+        ...
+    ValueError: chief must be greater than 0
+
+    >>> bg.integer_validator("oga", 0 - 7)
+    Traceback (most recent call last):
+        ...
+    ValueError: oga must be greater than 0
+
+    >>> bg.integer_validator("amegan", False)
+    Traceback (most recent call last):
+        ...
+    ValueError: amegan must be greater than 0
+
+
+__________________________________________________________________
+[05] -> Calling integer_validator() without second argument > 0
+    >>> bg.integer_validator("name", 1)
+    
+
+    >>> bg.integer_validator("name", True)
+    
+
+    >>> bg.integer_validator("name", 99)
+    
+
+    >>> bg.integer_validator("name", 10 * 3)
+    
+
+
+__________________________________________________________________
+[06] -> Calling integer_validator() with first arg empty string
+    >>> bg.integer_validator("", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError:  must be greater than 0
+ 
+    >>> bg.integer_validator("", True)
+
+
+    >>> bg.integer_validator("", -1)
+    Traceback (most recent call last):
+        ...
+    ValueError:  must be greater than 0
+ 
+    >>> bg.integer_validator("", 20)
+    
+ 
+    >>> bg.integer_validator("", "salad")
+    Traceback (most recent call last):
+        ...
+    TypeError:  must be an integer
+ 
+
+ __________________________________________________________________
+[06] -> Calling the area() method
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
