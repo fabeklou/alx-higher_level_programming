@@ -11,7 +11,7 @@ def read_file(filename=""):
 
     Args:
         filename (str): a path to the file to read from
-    
+
     """
     with open("my_file_0.txt", encoding="utf-8") as fo:
         print("{}".format(fo.read()), end="")
