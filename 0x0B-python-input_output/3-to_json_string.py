@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-import json
-
 """This module defines a function `to_json_string` that
 can generate a JSON (Javascript Object Notation)
 representation of any kind of object
 """
+
+import json
 
 
 def to_json_string(my_obj):
