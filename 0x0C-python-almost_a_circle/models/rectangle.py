@@ -141,3 +141,7 @@ class Rectangle(Base):
     def area(self):
         """returns the area value of a reactangle object"""
         return self.width * self.height
+
+    def display(self):
+        """Prints a rectangle object using '#' characters"""
+        print("{}".format((('#' * self.width) + '\n') * self.height), end="")
