@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-"""This module defines the structure for rectangle objects"""
+"""
+This module defines the structure for rectangle objects
+"""
 
 from base import Base
 
@@ -31,7 +33,9 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self):
-        """returns a printable verison of a rectangle object"""
+        """
+        returns a printable verison of a rectangle object
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
@@ -118,6 +122,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
+        print("inited !")
 
     @property
     def y(self):
@@ -144,10 +149,29 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """returns the area value of a reactangle object"""
+        """
+        returns the area value of a reactangle object
+        """
         return self.width * self.height
 
     def display(self):
-        """Prints a rectangle object using '#' characters"""
+        """
+        Prints a rectangle object using '#' characters
+        """
         print("{}".format((self.y * '\n') + ((self.x * ' ') +
                           ('#' * self.width) + '\n') * self.height), end="")
+
+    def update(self, *args):
+        """update is a variadic method. All arguments
+        passed to it are packed in the tuple before it called.
+        We iterate over the tuple to get the individual values
+        and update the rectangle object occordingly
+
+        Args:
+            args (:list: :int):
+                list of values of attributs to update from id to heigt
+
+        """
+        attrs: list = ["id", "x", "y", "width", "height"]
+        for idx, value in enumerate(args):
+            setattr(self, attrs[idx], value)

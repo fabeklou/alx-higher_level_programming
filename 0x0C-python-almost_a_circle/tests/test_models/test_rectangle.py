@@ -4,7 +4,7 @@
 the models folder
 """
 
-import models.rectangle import Rectangle
+from models.rectangle import Rectangle
 import unittest
 
 
