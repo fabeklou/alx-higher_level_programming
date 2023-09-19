@@ -7,7 +7,7 @@ reactangle objects
 
 """
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -172,24 +172,14 @@ class Rectangle(Base):
         Args:
             args (:list: :int):
                 list of values of attributs to update from id to heigt
+            kwargs (dict):
+                list of key-word arguments
 
         """
         if args:
-            attrs: list = ["id", "with", "height", "x", "y"]
+            attrs: list = ["id", "width", "height", "x", "y"]
             for idx, value in enumerate(args):
                 setattr(self, attrs[idx], value)
             return
         for attr, value in kwargs.items():
             setattr(self, attr, value)
-
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(3, 2)
-    print(r1.area())
-
-    r2 = Rectangle(2, 10)
-    print(r2.area())
-
-    r3 = Rectangle(8, 7, 0, 0, 12)
-    print(r3.area())
