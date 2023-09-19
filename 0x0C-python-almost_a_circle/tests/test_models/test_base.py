@@ -13,19 +13,21 @@ class TestBase(unittest.TestCase):
 
     def test_no_arg(self):
         """New Base object without argument"""
-        b = Base()
-        self.assertEqual(b.id, 1)
-        b = Base()
-        self.assertEqual(b.id, 2)
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
+
+        b2 = Base()
+        self.assertEqual(b2.id, 2)
 
     def test_valid_arg(self):
         """New Base object with valid argument"""
-        b = Base(10)
-        self.assertEqual(b.id, 10)
+        b3 = Base(10)
+        self.assertEqual(b3.id, 10)
 
     def test_invalid_arg(self):
         """New Base object with invalid argument"""
-        b = Base(None)
-        self.assertEqual(b.id, 3)
+        b4 = Base(None)
+        self.assertEqual(b4.id, 1)
+
         b_str = Base("Fab is great")
         self.assertEqual(b_str.id, "Fab is great")

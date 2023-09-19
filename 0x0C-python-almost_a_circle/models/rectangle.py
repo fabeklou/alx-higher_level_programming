@@ -30,6 +30,11 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        """returns a printable verison of a rectangle object"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
+
     @property
     def width(self):
         """The width property can be used to set/get the value
@@ -144,4 +149,5 @@ class Rectangle(Base):
 
     def display(self):
         """Prints a rectangle object using '#' characters"""
-        print("{}".format((('#' * self.width) + '\n') * self.height), end="")
+        print("{}".format((self.y * '\n') + ((self.x * ' ') +
+                          ('#' * self.width) + '\n') * self.height), end="")
