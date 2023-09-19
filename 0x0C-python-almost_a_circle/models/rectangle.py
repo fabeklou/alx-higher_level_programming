@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 """
-This module defines the structure for rectangle objects
+This module defines the structure for rectangle objects and
+contains a bunch of method to create and work with
+reactangle objects
+
 """
 
 from base import Base
@@ -161,7 +164,7 @@ class Rectangle(Base):
         print("{}".format((self.y * '\n') + ((self.x * ' ') +
                           ('#' * self.width) + '\n') * self.height), end="")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update is a variadic method. All arguments
         passed to it are packed in the tuple before it called.
         We iterate over the tuple to get the individual values
@@ -172,6 +175,10 @@ class Rectangle(Base):
                 list of values of attributs to update from id to heigt
 
         """
-        attrs: list = ["id", "x", "y", "width", "height"]
-        for idx, value in enumerate(args):
-            setattr(self, attrs[idx], value)
+        if args:
+            attrs: list = ["id", "x", "y", "width", "height"]
+            for idx, value in enumerate(args):
+                setattr(self, attrs[idx], value)
+            return
+        for attr, value in kwargs.items():
+            setattr(self, attr, value)
