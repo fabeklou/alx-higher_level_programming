@@ -176,7 +176,7 @@ class Rectangle(Base):
 
         """
         if args:
-            attrs: list = ["id", "x", "y", "width", "height"]
+            attrs: list = ["id", "with", "height", "x", "y"]
             for idx, value in enumerate(args):
                 setattr(self, attrs[idx], value)
             return
