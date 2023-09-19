@@ -125,7 +125,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-        print("inited !")
 
     @property
     def y(self):
@@ -182,3 +181,15 @@ class Rectangle(Base):
             return
         for attr, value in kwargs.items():
             setattr(self, attr, value)
+
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(3, 2)
+    print(r1.area())
+
+    r2 = Rectangle(2, 10)
+    print(r2.area())
+
+    r3 = Rectangle(8, 7, 0, 0, 12)
+    print(r3.area())

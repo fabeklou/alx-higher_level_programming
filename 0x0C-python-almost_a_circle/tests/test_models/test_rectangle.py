@@ -13,7 +13,7 @@ class TestRectangle(unittest.TestCase):
     rectangle class
     """
 
-    def test_with_vald_id(self):
+    def test_with_valid_id(self):
         pass
 
     def test_with_invalid_id(self):
