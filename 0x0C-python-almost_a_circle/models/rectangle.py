@@ -7,7 +7,7 @@ reactangle objects
 
 """
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -165,12 +165,12 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """update is a variadic method. All arguments
-        passed to it are packed in the tuple before it called.
-        We iterate over the tuple to get the individual values
+        passed to it are packed in the tuple before it is called.
+        We iterate over the tuple/dict to get the individual values
         and update the rectangle object occordingly
 
         Args:
-            args (:list: :int):
+            args (list[int]):
                 list of values of attributs to update from id to heigt
             kwargs (dict):
                 list of key-word arguments

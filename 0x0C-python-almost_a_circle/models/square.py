@@ -5,7 +5,7 @@ inherit from the Rectangle class and is used to work
 with square objects
 """
 
-from models.rectangle import Rectangle
+from rectangle import Rectangle
 
 
 class Square(Rectangle):
