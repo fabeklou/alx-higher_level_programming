@@ -6,6 +6,7 @@ id attribute across multiple other classes
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -175,3 +176,44 @@ class Base:
                 return [cls.create(**dct) for dct in list_dct]
         except Exception:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and daws all Rectangles and Squares
+
+        Args:
+            list_rectangles (list[obj]):
+                is a list of Rectangle objects
+            list_squares (list[obj]):
+                is a list of Square objects
+
+        useful article:
+            https://www.geeksforgeeks.org/turtle-programming-python/
+
+        """
+        turtle.title("Drawing : Rectangles and Squares")
+        turtle.bgcolor("#001419")
+        turtle.hideturtle()
+        turtle.pensize(2)
+
+        for rectangle in list_rectangles:
+            turtle.color("#53FF45")
+            turtle.penup()
+            turtle.goto(rectangle.x, rectangle.y)
+            turtle.pendown()
+            for _ in range(2):
+                turtle.forward(rectangle.width)
+                turtle.left(90)
+                turtle.forward(rectangle.height)
+                turtle.left(90)
+
+        for square in list_squares:
+            turtle.color("#F5B841")
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
+            for _ in range(4):
+                turtle.forward(square.size)
+                turtle.left(90)
+
+        turtle.exitonclick()
