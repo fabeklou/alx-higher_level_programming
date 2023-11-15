@@ -12,6 +12,14 @@ const fileC = process.argv[4];
 
 const dataArr = [];
 
+if (!(fs.existsSync(fileA) &&
+      fs.statSync(fileA).isFile &&
+      fs.existsSync(fileB) &&
+      fs.statSync(fileB).isFile &&
+      fileC !== undefined)) {
+  process.exit();
+}
+
 fs.readFile(fileA, 'utf8', (err, dataA) => {
   if (err) {
     throw err;
