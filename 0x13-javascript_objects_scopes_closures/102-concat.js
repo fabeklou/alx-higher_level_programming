@@ -33,7 +33,7 @@ fs.readFile(fileB, 'utf8', (err, dataB) => {
   }
   dataArr.push(dataB);
 
-  fs.writeFile(fileC, `${dataArr[0]}\n${dataArr[1]}\n`, (err) => {
+  fs.writeFile(fileC, dataArr.join(''), (err) => {
     if (err) {
       throw err;
     }
