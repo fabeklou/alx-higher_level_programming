@@ -28,7 +28,7 @@ if __name__ == "__main__":
     db_cursor.execute("""
                         SELECT *
                         FROM states
-                        WHERE states.name = '{}'
+                        WHERE states.name LIKE BINARY '{}'
                         ORDER BY states.id ASC
                         """.format(state_name))
     states_by_name = db_cursor.fetchall()
