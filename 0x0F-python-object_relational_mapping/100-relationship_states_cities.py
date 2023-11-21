@@ -7,12 +7,12 @@ and save them as relationship_city.py and relationship_state.py
 
 
 if __name__ == "__main__":
-    from model_state import Base
-    from model_state import State
-    from model_city import City
+    from relationship_state import Base
+    from relationship_state import State
+    from relationship_city import City
     from sqlalchemy import create_engine
     from sqlalchemy.engine import URL
-    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy.orm import Session
     import sys
 
     user_name = sys.argv[1]
@@ -29,14 +29,14 @@ if __name__ == "__main__":
     )
 
     engine = create_engine(url_object)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    Base.metadata.create_all(engine)
+    session = Session(engine)
 
-    state = State(name='California')
-    city = City(name='San Francisco')
-    state.cities.append(city)
+    new_state = State(name='California')
+    new_city = City(name='San Francisco')
 
-    session.add(state)
+    new_state.cities.append(new_city)
+    session.add(new_state)
+
     session.commit()
-
     session.close()
