@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-"""This module prints all City objects
-from the database hbtn_0e_14_usa
+"""This module lists all City objects from
+the database hbtn_0e_101_usa
 
 """
 
@@ -29,6 +29,7 @@ if __name__ == '__main__':
     cities = session.query(City).join(State).order_by(City.id).all()
 
     for city in cities:
-        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+        print("{}: {}  -> {}".format(
+            city.id, city.name, city.state.name))
 
     session.close()
