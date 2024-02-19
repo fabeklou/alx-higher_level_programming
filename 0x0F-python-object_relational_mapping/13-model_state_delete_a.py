@@ -26,7 +26,7 @@ if __name__ == '__main__':
     session = Session(engine)
 
     # delete a row from the states table
-    records = session.query(State).filter(State.name.conatin('a')).all()
+    records = session.query(State).filter(State.name.contains('a')).all()
 
     if records:
         for record in records:
