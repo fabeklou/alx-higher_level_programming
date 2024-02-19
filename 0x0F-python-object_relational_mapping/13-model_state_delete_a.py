@@ -26,9 +26,11 @@ if __name__ == '__main__':
     session = Session(engine)
 
     # delete a row from the states table
-    records = session.query(State).filter(State.name.like('%a%')).all()
-    for record in records:
-        session.delete(record)
+    records = session.query(State).filter(State.name.conatin('a')).all()
+
+    if records:
+        for record in records:
+            session.delete(record)
     session.commit()
 
     session.close()
