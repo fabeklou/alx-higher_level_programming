@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-"""This module prints all City objects
-from the database hbtn_0e_14_usa
+"""This module lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa
 
 """
 
@@ -26,8 +26,8 @@ if __name__ == '__main__':
     # creating a new session object
     session = Session(engine)
 
-    states = session.query(State).outerjoin(
-                City).order_by(State.id, City.id).all()
+    states = session.query(State).join(City).order_by(
+        State.id, City.id).all()
 
     for state in states:
         print("{}: {}".format(state.id, state.name))
