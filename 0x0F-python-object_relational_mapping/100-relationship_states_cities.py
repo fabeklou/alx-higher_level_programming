@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-"""This module prints all City objects
-from the database hbtn_0e_14_usa
+"""This module creates the State "California" with
+the City"San Francisco" from the database hbtn_0e_100_usa
 
 """
 
@@ -27,8 +27,8 @@ if __name__ == '__main__':
     session = Session(engine)
 
     # creating a state and a city object
-    new_state = State(name='California')
-    new_city = City(name='San Francisco')
+    new_state = State(name="California")
+    new_city = City(name="San Francisco")
 
     new_state.cities.append(new_city)
     session.add(new_state)
