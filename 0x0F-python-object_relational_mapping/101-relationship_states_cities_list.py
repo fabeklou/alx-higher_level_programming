@@ -26,7 +26,7 @@ if __name__ == '__main__':
     # creating a new session object
     session = Session(engine)
 
-    states = session.query(State).join(City).order_by(
+    states = session.query(State).outerjoin(City).order_by(
         State.id, City.id).all()
 
     for state in states:
