@@ -15,11 +15,12 @@ if __name__ == "__main__":
     payload = {"q": letter}
 
     res = requests.post(URL, data=payload)
-    json_res = res.json()
 
-    if not json_res:
-        print("No result")
-    elif isinstance(json_res, str):
+    try:
+        json_res = res.json()
+        if not json_res:
+            print("No result")
+        else:
+            print("[{}] {}".format(json_res.get("id"), json_res.get("name")))
+    except requests.exceptions.JSONDecodeError as err:
         print("Not a valid JSON")
-    else:
-        print("[{}] {}".format(json_res.get("id"), json_res.get("name")))
