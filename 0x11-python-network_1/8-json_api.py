@@ -17,10 +17,12 @@ if __name__ == "__main__":
     res = requests.post(URL, data=payload)
 
     try:
+        res.raise_for_status()
         json_res = res.json()
         if not json_res:
             print("No result")
         else:
             print("[{}] {}".format(json_res.get("id"), json_res.get("name")))
-    except (requests.exceptions.JSONDecodeError, ValueError) as err:
+    except (requests.exceptions.JSONDecodeError,
+            requests.exceptions.HTTPError) as err:
         print("Not a valid JSON")
