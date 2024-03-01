@@ -4,7 +4,8 @@
 in a list of unsorted integers
 """
 
-def find_peak(list_of_integers):
+
+def find_peak(list_int):
     """find_peak - finds and retruns the peak
     in a list of unsorted integers
 
@@ -16,9 +17,8 @@ def find_peak(list_of_integers):
 
     """
     peak = None
-    l = list_of_integers  # aliasing
 
-    for i in range(1, len(l) - 1):
-        if l[i] > l[i - 1] and l[i] > l[i + 1]:
-            peak = l[i]
+    for i in range(1, len(list_int) - 1):
+        if list_int[i] > list_int[i - 1] and list_int[i] > list_int[i + 1]:
+            peak = list_int[i]
     return peak
