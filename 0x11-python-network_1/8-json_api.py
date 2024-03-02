@@ -17,14 +17,15 @@ if __name__ == "__main__":
     res = requests.post(URL, data=payload)
 
     try:
-        # res.raise_for_status()
+        if res.headers.get('content-type') != 'application/json':
+            raise ValueError("Not a valid JSON")
+
         json_res = res.json()
 
         if json_res == {}:
             print("No result")
         else:
-            if 'name' not in json_res or 'id' not in json_res:
-                raise ValueError("Not a valid JSON")
+
             print("[{}] {}".format(json_res.get("id"), json_res.get("name")))
     except (requests.exceptions.JSONDecodeError,
             requests.exceptions.HTTPError, ValueError) as err:
