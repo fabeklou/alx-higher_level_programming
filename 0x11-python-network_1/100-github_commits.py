@@ -17,7 +17,8 @@ if __name__ == "__main__":
 
     json_res = res.json()
 
-    json_res.sort(key=lambda x: x["commit"]["author"]["date"], reverse=True)
+    # json_res.sort(key=lambda x: x.get("commit").get("author").get("time"),
+    #               reverse=True)
 
     for commit in json_res[:10]:
         sha = commit.get("sha")
