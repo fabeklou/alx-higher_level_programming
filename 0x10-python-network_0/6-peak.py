@@ -54,14 +54,16 @@ def find_peak(list_int):
 
         # if middle element is the peak, break the loop and return it
         #   do not check the left side of the mid element if his index is 0
-        #   do not check the right side of the mid element if his index is size - 1
+        #   do not check the right side of the mid element if his index
+        #       is size - 1
         if (mid == 0 or list_int[mid] >= list_int[mid - 1])\
-            and (mid == size - 1 or list_int[mid] >= list_int[mid + 1]):
+                and (mid == size - 1 or list_int[mid] >= list_int[mid + 1]):
             peak = list_int[mid]
             break
-        
-        # if the element on the left side of the middle element is greater than him,
-        #   the peak should be in the left half of the list
+
+        # if the element on the left side of the middle element
+        #   is greater than him, the peak should be
+        #   in the left half of the list
         # otherwise the peak is in the right half of the list
         if mid > 0 and list_int[mid - 1] > list_int[mid]:
             right = mid - 1
