@@ -2,26 +2,37 @@
 
 const request = require('request');
 
-const recursiveFetch = (index, urlArray) => {
-  if (index === urlArray.length) return;
-
-  request(urlArray[index], (error, response, body) => {
-    if (error) throw error;
-    console.log(JSON.parse(body).name);
+const fetchCharacter = (url) => {
+  return new Promise((resolve, reject) => {
+    request(url, (error, response, body) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(JSON.parse(body).name);
+    });
   });
+};
 
-  recursiveFetch(index + 1, urlArray);
+const asyncFetch = async (urlArray) => {
+  try {
+    for (const url of urlArray) {
+      const result = await fetchCharacter(url);
+      console.log(result);
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 try {
   const ID = process.argv[2];
-  const URL = 'https://swapi-api.alx-tools.com/api/films/' + ID;
+  const URL = `https://swapi-api.alx-tools.com/api/films/${ID}`;
 
   request(URL, (error, response, body) => {
     if (error) throw error;
     const characters = JSON.parse(body).characters;
-    const index = 0;
-    recursiveFetch(index, characters);
+    asyncFetch(characters);
   });
 } catch (error) {
   console.error(error);
